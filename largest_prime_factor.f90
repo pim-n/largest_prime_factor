@@ -6,11 +6,14 @@
 PROGRAM largest_prime_factor
     IMPLICIT NONE
     
-    CHARACTER (len = 32) :: input
+    CHARACTER (len = 20) :: input
     INTEGER :: x = 3
     INTEGER :: n
+    INTEGER :: chosen_number
 
+    PRINT *, "Enter a positive integer between 1 and 9223372036854775807:"
     READ *, n
+    chosen_number = n
     
     DO WHILE (MOD(n,2) .eq. 0)
         n = n/2
@@ -24,6 +27,6 @@ PROGRAM largest_prime_factor
         ENDIF
     ENDDO
 
-    PRINT *, x
+    PRINT '(4g0)', "The largest prime factor of ", chosen_number, " is ", x
 
 END PROGRAM largest_prime_factor
